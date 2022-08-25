@@ -3,6 +3,8 @@ package br.com.alura.loja.modelo;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "produtos")
@@ -14,10 +16,13 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal preco;
-    private LocalDate dataCadastro = LocalDate.now();
+    private final LocalDate dataCadastro = LocalDate.now();
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+    @OneToMany(mappedBy = "produto")
+    private final List<ItemPedido> produtos = new ArrayList<>();
 
     public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
         this.nome = nome;

@@ -1,0 +1,19 @@
+package br.com.alura.loja.dao;
+
+import br.com.alura.loja.modelo.Pedido;
+
+import javax.persistence.EntityManager;
+
+public class PedidoDAO {
+
+    private final EntityManager em;
+
+    public PedidoDAO(EntityManager em) {
+        this.em = em;
+    }
+
+    public void cadastrar(Pedido pedido) {
+        this.em.persist(pedido);
+    }
+
+}
