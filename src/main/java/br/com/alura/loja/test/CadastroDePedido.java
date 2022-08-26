@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class CadastroDePedido {
 
     public static void main(String[] args) {
-        cadastrarProduto();
+        popularBancoDeDados();
 
         EntityManager em = JPAUtil.getEntityManager();
 
@@ -32,10 +32,14 @@ public class CadastroDePedido {
         pedidoDAO.cadastrar(pedido);
 
         em.getTransaction().commit();
+
+        BigDecimal valorTotalVendido = pedidoDAO.obterValorTotalVendido();
+        System.out.println("Valor total vendido: " + valorTotalVendido);
+
         em.close();
     }
 
-    private static void cadastrarProduto() {
+    private static void popularBancoDeDados() {
         Categoria celulares = new Categoria("CELULARES");
         Produto celular = new Produto("IPhone 12", "Apple", new BigDecimal("4000"), celulares);
         Cliente cliente = new Cliente("Alexandre Oliveira", "123456");

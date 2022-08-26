@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8df74643-1c69-4cc7-94ec-d3a379f4dbf0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/dao/ClienteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/dao/PedidoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/ItemPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/test/CadastroDePedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="8df74643-1c69-4cc7-94ec-d3a379f4dbf0" name="Changes" comment="Mapeando novas entidades">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/test/CadastroDeProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/test/CadastroDeProduto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/dao/PedidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/modelo/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/test/CadastroDePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/loja/test/CadastroDePedido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,8 +110,18 @@
       <option name="presentableId" value="Default" />
       <updated>1661033164452</updated>
       <workItem from="1661033167628" duration="4287000" />
-      <workItem from="1661462109343" duration="1919000" />
+      <workItem from="1661462109343" duration="2385000" />
+      <workItem from="1661465805372" duration="254000" />
+      <workItem from="1661533964288" duration="320000" />
     </task>
+    <task id="LOCAL-00001" summary="Mapeando novas entidades">
+      <created>1661464464070</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661464464070</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +137,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mapeando novas entidades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mapeando novas entidades" />
   </component>
 </project>
