@@ -8,42 +8,40 @@ import br.com.alura.loja.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
+import java.util.List;
 
 public class CadastroDeProduto {
+	
+	public static void main(String[] args) {
+		cadastrarProduto();
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDAO produtoDao = new ProdutoDAO(em);
+		
+		Produto p = produtoDao.buscarPorId(1l);
+		System.out.println(p.getPreco());
+		
+		List<Produto> todos = produtoDao.buscarTodosPorNomeCategoria("CELULARES");
+		todos.forEach(p2 -> System.out.println(p.getNome()));
+	
+		BigDecimal precoDoProduto = produtoDao.buscarPrecoPorId(1);
+		System.out.println("Preco do Produto: " +precoDoProduto);
+	}
 
-    public static void main(String[] args) {
-        cadastrarProduto();
-
-        EntityManager em = JPAUtil.getEntityManager();
-        ProdutoDAO produtoDAO = new ProdutoDAO(em);
-        /*Produto produto = produtoDAO.buscarPorId(1L);
-        System.out.println(produto);*/
-//        List<Produto> produtos = produtoDAO.buscarTodos();
-//        List<Produto> produtos = produtoDAO.buscarTodosPorNome("IPhone 12");
-//        List<Produto> produtos = produtoDAO.buscarTodosPorNomeCategoria("CELULARES");
-//        produtos.forEach(p -> System.out.println(p));
-        BigDecimal precoProduto = produtoDAO.buscarPrecoPorId(1L);
-        System.out.println(precoProduto);
-    }
-
-    private static void cadastrarProduto() {
-        Categoria celulares = new Categoria("CELULARES");
-        Produto celular = new Produto("IPhone 12", "Apple", new BigDecimal("4000"), celulares);
-
-        EntityManager em = JPAUtil.getEntityManager();
-        ProdutoDAO produtoDAO = new ProdutoDAO(em);
-        CategoriaDAO categoriaDAO = new CategoriaDAO(em);
-
-        em.getTransaction().begin();
-
-        categoriaDAO.cadastrar(celulares);
-        produtoDAO.cadastrar(celular);
-
-//        celulares.setDescricao("XPTO");
-//        produtoDAO.deletar(celular);
-
-        em.getTransaction().commit();
-        em.close();
-    }
+	private static void cadastrarProduto() {
+		Categoria celulares = new Categoria("CELULARES");
+		Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares );
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDAO produtoDao = new ProdutoDAO(em);
+		CategoriaDAO categoriaDao = new CategoriaDAO(em);
+		
+		em.getTransaction().begin();
+		
+		categoriaDao.cadastrar(celulares);
+		produtoDao.cadastrar(celular);
+		
+		em.getTransaction().commit();
+		em.close();
+	}
 
 }

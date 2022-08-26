@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "produtos")
+@NamedQuery(name = "Produto.buscarTodosPorNomeCategoria", query = "SELECT p from Produto p where p.categoria.descricao = :nome")
 public class Produto {
 
     @Id
