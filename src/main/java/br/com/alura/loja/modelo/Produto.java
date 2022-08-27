@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "produtos")
 @NamedQuery(name = "Produto.buscarTodosPorNomeCategoria", query = "SELECT p from Produto p where p.categoria.descricao = :nome")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 
     @Id
