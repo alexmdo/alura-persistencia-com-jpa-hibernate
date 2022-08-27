@@ -3,6 +3,7 @@ package br.com.alura.loja.test;
 import br.com.alura.loja.dao.CategoriaDAO;
 import br.com.alura.loja.dao.ProdutoDAO;
 import br.com.alura.loja.modelo.Categoria;
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.util.JPAUtil;
 
@@ -17,7 +18,7 @@ public class CadastroDeProduto {
 		EntityManager em = JPAUtil.getEntityManager();
 		ProdutoDAO produtoDao = new ProdutoDAO(em);
 		
-		Produto p = produtoDao.buscarPorId(1l);
+		Produto p = produtoDao.buscarPorId(1L);
 		System.out.println(p.getPreco());
 		
 		List<Produto> todos = produtoDao.buscarTodosPorNomeCategoria("CELULARES");
@@ -28,7 +29,7 @@ public class CadastroDeProduto {
 	}
 
 	private static void cadastrarProduto() {
-		Categoria celulares = new Categoria("CELULARES");
+		Categoria celulares = new Categoria(new CategoriaId("CELULARES", "TECNOLOGIA"));
 		Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares );
 		
 		EntityManager em = JPAUtil.getEntityManager();

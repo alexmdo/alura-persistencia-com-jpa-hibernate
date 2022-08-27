@@ -20,9 +20,9 @@ public class PerformanceConsultas {
 	}
 
 	private static void popularBancoDeDados() {
-		Categoria celulares = new Categoria("CELULARES");
-		Categoria videogames = new Categoria("VIDEOGAMES");
-		Categoria informatica = new Categoria("INFORMATICA");
+		Categoria celulares = new Categoria(new CategoriaId("CELULARES", "TECNOLOGIA"));
+		Categoria videogames = new Categoria(new CategoriaId("VIDEOGAMES", "GEEK"));
+		Categoria informatica = new Categoria(new CategoriaId("INFORMATICA", "GEEK"));
 
 		Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares);
 		Produto videogame = new Produto("PS5", "Playstation 5", new BigDecimal("8000"), videogames);

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "produtos")
-@NamedQuery(name = "Produto.buscarTodosPorNomeCategoria", query = "SELECT p from Produto p where p.categoria.descricao = :nome")
+@NamedQuery(name = "Produto.buscarTodosPorNomeCategoria", query = "SELECT p from Produto p where p.categoria.id.descricao = :nome")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 
@@ -20,7 +20,6 @@ public class Produto {
     private BigDecimal preco;
     private final LocalDate dataCadastro = LocalDate.now();
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
     @OneToMany(mappedBy = "produto")
