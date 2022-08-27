@@ -19,7 +19,7 @@ public class Pedido {
     @Column(name = "valor_total")
     private BigDecimal valorTotal = BigDecimal.ZERO;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
