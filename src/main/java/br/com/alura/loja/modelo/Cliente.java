@@ -13,50 +13,33 @@ public class Cliente {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    private String nome;
-    private String cpf;
+    @Embedded
+    private DadosPessoais dadosPessoais;
 
     @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidos = new ArrayList<>();
+    private final List<Pedido> pedidos = new ArrayList<>();
 
     public Cliente() {
     }
 
     public Cliente(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
+        this.dadosPessoais = new DadosPessoais(nome, cpf);
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        return dadosPessoais.getNome();
     }
 
     public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+        return dadosPessoais.getCpf();
     }
 
     public List<Pedido> getPedidos() {
         return pedidos;
-    }
-
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
     }
 
     public void adicionarPedido(final Pedido pedido) {
