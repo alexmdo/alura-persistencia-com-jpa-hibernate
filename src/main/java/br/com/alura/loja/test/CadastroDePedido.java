@@ -10,6 +10,7 @@ import br.com.alura.loja.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class CadastroDePedido {
@@ -39,6 +40,10 @@ public class CadastroDePedido {
 		pedidoDao.cadastrar(pedido2);
 		
 		em.getTransaction().commit();
+
+//		produtoDao.buscarPorParametros("PS5", null, LocalDate.now());
+		produtoDao.buscarPorParametrosCriteria(null, null, LocalDate.now());
+
 		em.close();
 	}
 	
